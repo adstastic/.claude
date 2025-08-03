@@ -1,0 +1,1 @@
+Use git status to list all modified files, then git diff to review them each one-by-one, staging them one-by-one if they are ready. Add todo list items to fix any files that aren't ready, and ignore any files that aren't related to the task. Ask for clarifications if needed. When all the relevant files are reviwed and staged, commit them with a descriptive commit message.

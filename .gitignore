@@ -1,0 +1,26 @@
+# Local settings
+settings.local.json
+
+# IDE files
+ide/
+
+# Project-specific files
+projects/
+
+# Shell snapshots
+shell-snapshots/
+
+# Stats
+statsig/
+
+# Todos
+todos/
+
+# Anthropic config
+.anthropic/
+
+# Checksums
+.checksums
+
+# OS files
+.DS_Store
