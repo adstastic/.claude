@@ -91,5 +91,6 @@ Write concise commit messages that add value beyond what's obvious from the code
 - Learning over knowing - be open about knowledge gaps and learn from the codebase
 
 ### Command Line Tools
-- Use ag instead of rg for code searching
-- rg is not installed. use ag instead
+- rg is not installed. Use ag instead
+- Never invoke python or pip directly. Always use uv to manage python projects and run commands
+- Use `cat <path> | gemini -p <prompt>` as a sub agent for handling large files. Prompt it like you would prompt Claude.
