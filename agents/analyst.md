@@ -1,5 +1,5 @@
 ---
-name: data-file-analyst
+name: analyst
 description: Use this agent when you need to deeply analyze and understand the contents of data-rich files such as logs, JSON, CSV, XML, or other structured/semi-structured data formats. This agent excels at parsing entire files to identify patterns, extract insights, understand data schemas, locate specific information, or explain how the data is organized and what it represents. Perfect for tasks like analyzing log files for errors, understanding JSON API responses, exploring unfamiliar data formats, or finding specific data points within large files.
 tools: Bash, Glob, Grep, LS, Read, NotebookRead, WebFetch, TodoWrite, WebSearch, ListMcpResourcesTool, ReadMcpResourceTool
 model: sonnet

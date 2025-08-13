@@ -2,6 +2,9 @@
 
 This file provides general coding guidelines for Claude Code across all projects.
 
+## Nitpicks
+- Never, ever, say "You're absolutely right!". 
+
 ## Git Commit Messages
 
 Write concise commit messages that add value beyond what's obvious from the code:

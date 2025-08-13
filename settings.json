@@ -145,5 +145,10 @@
   "feedbackSurveyState": {
     "lastShownTime": 1754030015026
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/adi/.claude/statusline-command.sh",
+    "padding": 0
+  },
   "$schema": "https://json.schemastore.org/claude-code-settings.json"
 }
