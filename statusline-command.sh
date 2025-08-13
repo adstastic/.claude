@@ -84,7 +84,10 @@ status_parts+=("🕐 ${elapsed_formatted}")
 if [[ "$context_percentage" == "err" ]]; then
     status_parts+=("🧠 err")
 else
-    status_parts+=("🧠 ${estimated_tokens}/${context_window} (${context_percentage}%)")
+    # Format tokens in thousands (k) format
+    estimated_k=$(awk "BEGIN {printf \"%.1fk\", $estimated_tokens/1000}")
+    context_k=$(awk "BEGIN {printf \"%.0fk\", $context_window/1000}")
+    status_parts+=("🧠 ${estimated_k}/${context_k} (${context_percentage}%)")
 fi
 
 # Join with separator
