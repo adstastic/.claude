@@ -36,8 +36,9 @@ fi
 
 # Get actual token count from ccusage
 if [[ -n "$session_id" ]] && command -v ccusage >/dev/null 2>&1; then
-    # Get only the last entry's tokens (they're cumulative)
-    session_tokens=$(ccusage session --id "$session_id" --json --jq '.entries[-1] | (.inputTokens + .outputTokens + .cacheReadTokens)' 2>/dev/null)
+    # Get the last non-zero entry's tokens (they're cumulative)
+    # This handles cases where the last entries might be errors with 0 tokens
+    session_tokens=$(ccusage session --id "$session_id" --json --jq '[.entries[] | select(.inputTokens > 0 or .outputTokens > 0 or .cacheReadTokens > 0)] | if length > 0 then last | (.inputTokens + .outputTokens + .cacheReadTokens) else 0 end' 2>/dev/null)
     
     if [[ -n "$session_tokens" ]] && [[ "$session_tokens" =~ ^[0-9]+$ ]] && [[ "$session_tokens" -gt 0 ]]; then
         estimated_tokens=$session_tokens
