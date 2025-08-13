@@ -24,11 +24,15 @@ if [[ $elapsed_seconds -lt 0 ]]; then
     elapsed_seconds=0
 fi
 
-# Format elapsed time as HH:MM:SS
+# Format elapsed time as Xh Ym (e.g., 1h 20m)
 elapsed_hours=$((elapsed_seconds / 3600))
 elapsed_minutes=$(((elapsed_seconds % 3600) / 60))
-elapsed_secs=$((elapsed_seconds % 60))
-elapsed_formatted=$(printf "%02d:%02d:%02d" $elapsed_hours $elapsed_minutes $elapsed_secs)
+
+if [[ $elapsed_hours -gt 0 ]]; then
+    elapsed_formatted="${elapsed_hours}h ${elapsed_minutes}m"
+else
+    elapsed_formatted="${elapsed_minutes}m"
+fi
 
 # Get actual token count from ccusage
 if [[ -n "$session_id" ]] && command -v ccusage >/dev/null 2>&1; then
